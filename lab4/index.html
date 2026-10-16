@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акустична варта</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="./js/monitoring.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <div class="container header__inner">
+        <div class="header__content">
+            <h1>Акустична варта</h1>
+            <p>Професійний моніторинг шумового забруднення міських територій</p>
+        </div>
+        <nav class="nav" aria-label="Основна навігація">
+            <a href="#intro">Про нас</a>
+            <a href="#monitoring">Моніторинг</a>
+            <a href="#services">Послуги</a>
+            <a href="#order">Замовлення</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container main-content">
+    <section id="intro" class="section intro">
+        <h2>Про компанію</h2>
+        <div class="intro__content">
+            <p>Ми здійснюємо вимірювання рівня шуму для житлових комплексів, офісів та промислових об'єктів.</p>
+            <p>Формуємо професійні звіти та рекомендації щодо зменшення шумового навантаження.</p>
+        </div>
+    </section>
+
+    <section id="monitoring" class="section">
+        <h2>Поточний моніторинг</h2>
+        <div class="monitoring-grid">
+            <div class="card monitor-card">
+                <p><strong>Об'єкт:</strong> ЖК Сонячний</p>
+                <p><strong>Статус:</strong> Активний</p>
+                <p><strong>Середній рівень:</strong> 58 дБ</p>
+                <p><strong>Період:</strong> 01.10.2026 – 07.10.2026</p>
+                <p><strong>Кількість точок:</strong> 12</p>
+            </div>
+            <div class="card monitor-card">
+                <p><strong>Стан:</strong> Стабільний</p>
+                <p><strong>Контроль:</strong> Постійний</p>
+                <p><strong>Зона:</strong> Житлова</p>
+            </div>
+            <div class="card monitor-card">
+                <p><strong>Датчики:</strong> 12</p>
+                <p><strong>Сигнали:</strong> Норма</p>
+                <p><strong>Оновлення:</strong> Щогодини</p>
+            </div>
+            <div class="card monitor-card">
+                <p><strong>Пік:</strong> 64 дБ</p>
+                <p><strong>Час:</strong> 18:00</p>
+                <p><strong>Статус:</strong> Контроль</p>
+            </div>
+            <div class="card monitor-card">
+                <p><strong>Звіт:</strong> Готується</p>
+                <p><strong>Рекомендації:</strong> Так</p>
+                <p><strong>Аналітика:</strong> Активна</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Напрями роботи</h2>
+        <div class="services-grid">
+            <article class="card service-card">
+                <h3>Житлові комплекси</h3>
+                <p>Оцінка рівня шуму біля житлових будинків.</p>
+            </article>
+            <article class="card service-card">
+                <h3>Офісні центри</h3>
+                <p>Контроль акустичного комфорту працівників.</p>
+            </article>
+            <article class="card service-card">
+                <h3>Промислові об'єкти</h3>
+                <p>Моніторинг виробничого шуму.</p>
+            </article>
+            <article class="card service-card">
+                <h3>Масові заходи</h3>
+                <p>Аналіз шумового впливу під час подій.</p>
+            </article>
+        </div>
+    </section>
+
+    <aside class="warning" id="warning-box">
+        <span class="status-dot" aria-hidden="true"></span>
+        <h3>Попередження</h3>
+        <p>Зафіксовано перевищення рекомендованого рівня шуму в пікові години.</p>
+    </aside>
+
+    <section class="section measurements">
+        <h2>Останні вимірювання</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Об'єкт</th>
+                        <th>Рівень</th>
+                        <th>Стан</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>05.10.2026</td>
+                        <td>Площа Ринок</td>
+                        <td>62 дБ</td>
+                        <td class="status status--warning">Підвищений</td>
+                    </tr>
+                    <tr>
+                        <td>04.10.2026</td>
+                        <td>Бізнес-центр Форум</td>
+                        <td>49 дБ</td>
+                        <td class="status status--ok">Нормальний</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="order" class="section">
+        <h2>Замовлення дослідження</h2>
+        <form class="form">
+            <div class="form__fields">
+                <label>
+                    Ім'я
+                    <input type="text" placeholder="Введіть ім'я">
+                </label>
+                <label>
+                    Email
+                    <input type="email" placeholder="example@gmail.com">
+                </label>
+                <label>
+                    Тип об'єкта
+                    <input type="text" placeholder="ЖК, офіс, підприємство">
+                </label>
+                <label>
+                    Період
+                    <input type="text" placeholder="Наприклад, 01.10–07.10.2026">
+                </label>
+            </div>
+            <div class="form__description">
+                <label>
+                    Опис
+                    <textarea rows="7" placeholder="Опишіть необхідне дослідження"></textarea>
+                </label>
+                <button type="submit">Надіслати</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__inner">
+        <p>Акустична варта | info@acoustic-watch.ua | 2026</p>
+        <p><strong>Автор: Сеньків Надія</strong></p>
+    </div>
+</footer>
+</body>
+</html>

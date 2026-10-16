@@ -1,0 +1,168 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 140px;
+    padding: v.$space-md;
+    border: 2px solid v.$color-primary;
+    border-radius: v.$radius;
+    background: v.$color-card;
+    transition: transform .3s, box-shadow .3s;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
+    }
+}
+
+.monitor-card {
+    transform: rotate(-1deg);
+
+    &:hover {
+        transform: rotate(0) translateY(-3px);
+    }
+}
+
+.service-card {
+    justify-content: flex-start;
+
+    h3 {
+        margin-bottom: v.$space-sm;
+    }
+}
+
+.warning {
+    position: relative;
+    width: 100%;
+    margin: v.$space-lg 0;
+    padding: v.$space-lg;
+    border: 2px solid v.$color-warning-border;
+    border-radius: v.$radius;
+    background: v.$color-warning-bg;
+    color: v.$color-warning-text;
+
+    h3 {
+        margin-right: v.$space-lg;
+    }
+}
+
+.status-dot {
+    position: absolute;
+    top: v.$space-md;
+    right: v.$space-md;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: v.$color-danger;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: v.$space-md;
+        border: 1px solid v.$color-border;
+        text-align: left;
+    }
+
+    th {
+        background: v.$color-primary;
+        color: v.$color-white;
+    }
+}
+
+.status {
+    font-weight: bold;
+
+    &--ok {
+        color: v.$color-success;
+    }
+
+    &--warning {
+        color: v.$color-danger;
+    }
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-lg;
+
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: v.$space-md;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: v.$space-md;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: v.$space-sm;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        border: 1px solid v.$color-border;
+        border-radius: v.$radius;
+        background: v.$color-white;
+        color: v.$color-text;
+    }
+
+    input[type="email"] {
+        border: 2px solid v.$color-success;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        align-self: flex-start;
+        padding: 10px 20px;
+        border: none;
+        border-radius: v.$radius;
+        background: v.$color-primary;
+        color: v.$color-white;
+        cursor: pointer;
+        transition: background .3s, transform .3s;
+
+        &:hover {
+            background: v.$color-primary-dark;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+@include m.respond-to(v.$bp-tablet) {
+    .form__fields {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include m.respond-to(v.$bp-desktop) {
+    .form {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}

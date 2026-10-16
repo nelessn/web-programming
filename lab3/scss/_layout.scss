@@ -1,0 +1,129 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.container {
+    @include m.container;
+}
+
+.header {
+    background: v.$color-primary;
+    color: v.$color-white;
+    padding: v.$space-lg 0;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: v.$space-lg;
+        text-align: center;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: v.$space-sm;
+
+    a {
+        padding: v.$space-sm v.$space-md;
+        border: 1px solid rgba(255, 255, 255, .65);
+        border-radius: v.$radius;
+        text-decoration: none;
+        transition: background .3s, color .3s;
+
+        &:hover {
+            background: v.$color-white;
+            color: v.$color-primary;
+        }
+    }
+}
+
+.main-content {
+    padding-block: v.$space-md;
+}
+
+.section {
+    margin: v.$space-lg 0;
+    padding: v.$space-lg;
+    background: v.$color-white;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius;
+}
+
+.intro {
+    border-left: 6px solid v.$color-primary;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: v.$space-md;
+    }
+}
+
+.monitoring-grid,
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-md;
+}
+
+.footer {
+    margin-top: v.$space-xl;
+    padding: v.$space-lg 0;
+    background: v.$color-primary;
+    color: v.$color-white;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: v.$space-md;
+        text-align: center;
+    }
+}
+
+@include m.respond-to(v.$bp-tablet) {
+    .header {
+        &__inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .monitoring-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro__content {
+        flex-direction: row;
+    }
+
+    .intro__content p {
+        flex: 1;
+    }
+
+    .footer__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+@include m.respond-to(v.$bp-desktop) {
+    .monitoring-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
